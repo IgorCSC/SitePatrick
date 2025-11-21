@@ -1,0 +1,19 @@
+---
+title: 'Massa: um vertedouro acelerado do espaço no tempo'
+layout: '../layouts/CapituloLayout.astro'
+---
+# Massa: um vertedouro acelerado do espaço no tempo
+## Patrick de Visscher
+
+Desde menino eu olhava o céu à noite e me perguntava: de que são feitas as estrelas? O que são esses pontinhos luminosos que me parecem tão distantes?
+Noções de tempo e de espaço foram se insinuando aos poucos na minha mente e o desejo de me aprofundar nos estudos de física foi tomando forma.
+
+O conceito de massa sempre me intrigou. Me imaginava um viajante espacial a percorrer tranquilamente o espaço escuro e vazio, velocidade constante, nada a interferir na minha trajetória. E, de repente, a percepção de que algo mudava, qualquer coisa me desviava da rota e me atraía, assim como um vertedouro que engole a água do reservatório.
+
+Completei minha formação em física, lecionei durante alguns anos e escolhi viver minha vida adulta em outro país. Vivenciei muitas aventuras, conheci lugares e pessoas completamente diferentes daquelas que me acompanharam na minha infância e juventude. A física, entretanto, sempre me acompanhou.
+
+Segui estudando e refletindo, procurando desvendar alguns dos mistérios e tornar simples a compreensão dos fenômenos naturais que sempre me fascinaram.
+
+Hoje procuro reunir em um livro parte das ideias que desenvolvi nos meus anos de juventude. Acredito que algumas delas não tem nada de original, mas que outras podem ser revolucionárias.
+
+Cabe a você, leitor, julgar meus escritos. Espero que eles suscitem muitas dúvidas e façam você desfrutar da maravilha que é reconhecer a mente humana como parte integrante do universo.
