@@ -8,6 +8,21 @@
 
 <p class="Grafico"><img class=.*src="(.*)" alt="" /></p>
 
-<p class="Grafico"><img class="_idGenObjectAttribute-1" src="Cap_1_novembro-web-resources/image/001.jpg" alt="" /></p>
+![](../assets/graficos/001.jpg)
 
-<p class="Grafico"><img class="_idGenObjectAttribute-2" src="Cap_1_novembro-web-resources/image/002.jpg" alt="" /></p>
+![](../assets/graficos/002.jpg)
+
+<p class="Grafico"><img class=.*src="Cap_1_novembro-web-resources/image/(.*)" alt="" /></p>
+
+por 
+
+![](../assets/graficos/$1)
+
+ <span class="Bold-Corpo CharOverride-1">
+
+ Legendas dos gráficos
+    <span class="CharOverride-3">
+
+**A**
+
+**X<sub>1</sub>**

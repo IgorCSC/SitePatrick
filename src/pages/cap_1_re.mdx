@@ -1,9 +1,8 @@
 ---
 title: 'Representação gráfica da evolução de acontecimentos no espaço-tempo'
 layout: '../layouts/CapituloLayout.astro'
-setup: |
-  import { Picture } from "astro-imagetools/components";
 ---
+import NextChapter from '../components/NextChapter.astro';
 
 # Capitulo 1
 
@@ -26,11 +25,6 @@ Os gráficos 16 e 17 exemplificam o uso das relações trigonométricas para def
 Um plano representa cada lugar (X) e cada instante (T) de um acontecimento
 
 ![](../assets/graficos/001.jpg)
-
-<img src="../assets/graficos/001.jpg" class="center-img" />
-
-
-
 
 Os pontos $O$, $A$, $B$ e $C$ representam acontecimentos situados no espaço-tempo. A cada acontecimento corresponde um instante (situado no tempo $T$) e um lugar (situado no espaço $X$).
 
@@ -113,19 +107,19 @@ Exemplo de uma adição simples de velocidades: Maria e João andam lado a lado 
 
 O objeto $A$ fica imóvel no referencial $X_1$, $T_1$ <span style="color: #006eaf;">(azul)</span> durante 10 segundos.
 
-![](../assets/graficos/008.png)
+![](../assets/graficos/008.jpg)
 
 ### Gráfico 9 • <span style="color: #006eaf;">Representação da trajetória de um objeto num referencial</span>
 
 O objeto $A$ desloca-se 6 metros em 10 segundos no referencial $X_2$, $T_2$<span style="color: #41b23b;">(verde)</span>.
 
-![](../assets/graficos/009.png)
+![](../assets/graficos/009.jpg)
 
 ### Gráfico 10 • <span style="color: #006eaf;">Representação da trajetória de um objeto em dois referenciais diferentes</span>
 
 Um objeto está fixo num referencial que se desloca em relação a outro
 
-![](../assets/graficos/010.png)
+![](../assets/graficos/010.jpg)
 
 O deslocamento do objeto $A$ está representado em dois referenciais diferentes. No referencial $X_1$, $T_1$ <span style="color: #006eaf;">(azul)</span> o objeto $A$ fica imóvel durante 10 segundos. No referencial $X_2$, $T_2$ <span style="color: #41b23b;">(verde)</span> o objeto $A$ desloca-se 6 metros em 10 segundos.
 
@@ -137,7 +131,7 @@ Os eixos de espaço ($X_1$ e $X_2$) sobrepõem-se, mas as medidas de tempo são 
 
 Uma régua está fixa num referencial que se desloca em relação a outro
 
-![](../assets/graficos/011.png)
+![](../assets/graficos/011.jpg)
 
 Uma régua $AB$ está representada em dois referenciais diferentes.
 
@@ -163,7 +157,7 @@ No referencial <span style="color: #41b23b;">verde</span> o objeto $A$ desloca-s
 
 Dois acontecimentos podem ser simultâneos em relação a um referencial e não em relação a outro 
 
-![](../assets/graficos/013.png)
+![](../assets/graficos/013.jpg)
 
 Os acontecimentos $A$ e $B$ são simultâneos no referencial $X_1$, $T$ <span style="color: #006eaf;">(azul)</span> e correspondem ao tempo $T$ = 2.
 No referencial $X_2$, $T_2$ <span style="color: #41b23b;">(verde)</span> estes dois acontecimentos não são mais simultâneos e correspondem a instantes diferentes ($T_2A$ = 2 e $T_2B$ = 5 (diferença de 3 segundos).
@@ -210,3 +204,5 @@ O referencial $X_1$, $T_1$ <span style="color: #006eaf;">(azul)</span> desloca-s
 Uma régua $AB$ é representada em ambos os gráficos. No gráfico da esquerda a régua fica imóvel no referencial <span style="color: #41b23b;">verde</span>. No gráfico da direita ela fica imóvel no referencial azul.
 
 Nos dois gráficos a régua encontra-se em $AB$ no instante $T$ = 0 e em $A_1B_1$ no instante $T$ = 9. A régua ocupa, sucessivamente, todos os pontos da área $ABB_1A_1$.
+
+<NextChapter url="/cap_0_intro/" title="Next" />

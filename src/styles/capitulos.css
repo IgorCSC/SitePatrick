@@ -20,7 +20,6 @@ html {
   font-style: normal;
 }
 
-
 body {
   margin: 10 auto;
   width: 100%;
@@ -33,22 +32,54 @@ body {
 
 /* For # (h1) */
 .post-content h1 {
-  color: #41b23b; /* Example: A strong red */
+  color: #41b23b;
 }
 
 /* For ## (h2) */
 .post-content h2 {
-  color: #2d71bb; /* Example: A deep blue */
+  color: #2d71bb;
+  font-size: 2.2rem
 }
 
 /* For ### (h3) */
 .post-content h3 {
-  color: #f46717; /* Example: A solid green */
+  color: #f46717;
   font-size: 2rem;
+}
+
+.post-content h2 {
+  /* Reduces space between the heading and the text BELOW it */
+  margin-bottom: 1rem; 
+  
+  /* OPTIONAL: Reduces space between the heading and the text ABOVE it */
+  margin-top: 1.8rem; 
+
+  /* Keeps multi-line titles from looking too spread out */
+  line-height: 1.1; 
+}
+
+.post-content h1 {
+  /* Reduces space between the heading and the text BELOW it */
+  margin-bottom: 0.9rem; 
+  
+  /* OPTIONAL: Reduces space between the heading and the text ABOVE it */
+  margin-top: 1.8rem; 
+
+  /* Keeps multi-line titles from looking too spread out */
+  line-height: 0.1; 
 }
 
 * {
   box-sizing: border-box;
+}
+
+.post-content img {
+  margin-left: auto; /* 2. Push from the left */
+  margin-right: auto;/* 3. Push from the right */
+  max-width: 60%;
+  height: auto;
+  display: block; /* Removes bottom margin gap */
+  border-radius: 8px; /* Optional styling */
 }
 
 h1 {
@@ -57,85 +88,10 @@ h1 {
   font-size: 2.5rem;
 }
 
-/* nav styles */
-
-.menu {
-  background-color: #0d0950;
-  border: none;
-  color: #fff;
-  font-size: 1.2rem;
-  font-weight: bold;
-  padding: 5px 10px;
-}
-
-.nav-links {
-  width: 100%;
-  display: none;
-  margin: 0;
-}
-
-.nav-links a {
+.center-img {
   display: block;
-  text-align: center;
-  padding: 10px 0;
-  text-decoration: none;
-  font-size: 1.2rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  color: #85680b;
-}
-
-.nav-links a:hover,
-.nav-links a:focus {
-  background-color: #ff9776;
-}
-
-:has(.menu[aria-expanded="true"]) .nav-links {
-  display: unset;
-}
-
-/* Esse código gera a visualização dinâmica para tables, celulares etc. */
-
-@media screen and (min-width: 636px) {
-  .nav-links {
-    margin-left: 5em;
-    display: block;
-    position: static;
-    width: auto;
-    background: none;
-  }
-
-  .nav-links a {
-    display: inline-block;
-    padding: 15px 20px;
-  }
-
-    .menu {
-    display: none;
-  }
-}
-
-html.dark {
-  background-color: #0d0950;
-  color: #fff;
-}
-
-.dark .menu {
-  background-color: #fff;
-  color: #000;
-}
-
-.dark .nav-links a:hover,
-.dark .nav-links a:focus {
-  color: #0d0950;
-}
-
-.dark .nav-links a {
-  color: #fff;
-}
-
-.dark a {
-  color: #ff9776;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .katex {
