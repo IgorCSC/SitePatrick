@@ -21,7 +21,9 @@ html {
 }
 
 body {
-  margin: 10 auto;
+  text-align: justify;
+  margin: 12 auto;
+  margin-left: 8rem;
   width: 100%;
   max-width: 100ch;
   padding: 1rem;
@@ -74,14 +76,24 @@ body {
 }
 
 .post-content img {
-  margin-left: auto; /* 2. Push from the left */
+  display: block;       /* Makes the image behave like a block, not text */
+  margin-left: 0;       /* Forces alignment to the left */
+  margin-right: auto;   /* Pushes empty space to the right */
+  max-width: 60%;      /* Ensures it doesn't overflow mobile screens */
+  display: block; /* Removes bottom margin gap */
+  border-radius: 8px; /* Optional styling */
+}
+
+.post-content img {
+  display: block;
+  margin-left: -2rem; /* 2. Push from the left */
   margin-right: auto;/* 3. Push from the right */
   max-width: 60%;
   height: auto;
   display: block; /* Removes bottom margin gap */
   border-radius: 8px; /* Optional styling */
 }
-
+z
 h1 {
   color:rgb(189, 7, 116);
   margin: 2rem 0;
