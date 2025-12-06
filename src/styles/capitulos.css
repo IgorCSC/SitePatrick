@@ -49,10 +49,10 @@ body {
 
 .post-content h2 {
   /* Reduces space between the heading and the text BELOW it */
-  margin-bottom: 1rem; 
+  margin-bottom: 3.8rem; 
   
   /* OPTIONAL: Reduces space between the heading and the text ABOVE it */
-  margin-top: 1.8rem; 
+  margin-top: -1.5rem; 
 
   /* Keeps multi-line titles from looking too spread out */
   line-height: 1.1; 
@@ -60,7 +60,7 @@ body {
 
 .post-content h1 {
   /* Reduces space between the heading and the text BELOW it */
-  margin-bottom: 0.9rem; 
+  margin-bottom: 3.8rem; 
   
   /* OPTIONAL: Reduces space between the heading and the text ABOVE it */
   margin-top: 1.8rem; 

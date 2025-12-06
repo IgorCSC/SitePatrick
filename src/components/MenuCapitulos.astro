@@ -1,0 +1,173 @@
+---
+// src/components/MenuCapitulos.astro
+
+const chapters = [
+  { title: "Introdução", url: "/cap_0_intro/" },
+  { title: "Capítulo 1: Representação gráfica da evolução de acontecimentos no espaço-tempo", url: "/cap_1_re" },
+  { title: "Capítulo 2: Representação gráfica das transformações do espaço e do tempo na relatividade restrita", url: "/cap_2_relativity/" },
+  { title: "Capítulo 3: Dimensões da massa e da carga elétrica", url: "/cap_3_blackholes/" },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<button id="menu-toggle" class="menu-toggle" aria-label="Open Chapter Menu">
+  <svg width="30" height="30" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+    <line x1="4" y1="6" x2="20" y2="6"></line>
+    <line x1="4" y1="12" x2="20" y2="12"></line>
+    <line x1="4" y1="18" x2="20" y2="18"></line>
+  </svg>
+</button>
+
+<aside id="menu-drawer" class="menu-drawer">
+  <div class="menu-header">
+    <h3>Índice</h3>
+    <button id="menu-close" aria-label="Close Menu">✕</button>
+  </div>
+  
+  <nav class="chapter-nav">
+    <ul>
+      {chapters.map((chapter) => {
+        const isActive = currentPath.replace(/\/$/, '') === chapter.url.replace(/\/$/, '');
+        return (
+          <li>
+            <a href={chapter.url} class={isActive ? 'active' : ''}>
+              {chapter.title}
+            </a>
+          </li>
+        )
+      })}
+    </ul>
+  </nav>
+</aside>
+
+<div id="menu-overlay" class="menu-overlay"></div>
+
+<script>
+  // 1. Select elements
+  const menuToggle = document.getElementById('menu-toggle');
+  const menuClose = document.getElementById('menu-close');
+  const menuDrawer = document.getElementById('menu-drawer');
+  const menuOverlay = document.getElementById('menu-overlay');
+
+  // 2. Define toggle function
+  function toggleMenu() {
+    // Toggle the 'open' class on drawer and overlay
+    menuDrawer.classList.toggle('open');
+    menuOverlay.classList.toggle('open');
+    
+    // Accessibility: change aria-expanded
+    const isOpen = menuDrawer.classList.contains('open');
+    menuToggle.setAttribute('aria-expanded', isOpen);
+  }
+
+  // 3. Add Event Listeners
+  if (menuToggle) menuToggle.addEventListener('click', toggleMenu);
+  if (menuClose) menuClose.addEventListener('click', toggleMenu);
+  if (menuOverlay) menuOverlay.addEventListener('click', toggleMenu);
+</script>
+
+<style>
+  /* --- BUTTON STYLES --- */
+  /* Note: You asked for LEFT side, but your code was set to RIGHT. 
+     I have changed this to 'left' to match your request. */
+  .menu-toggle {
+    position: fixed;
+    top: 1rem;
+    right: 1rem; /* Changed from right to left */
+    z-index: 100;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 0.5rem;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  }
+
+  /* --- DRAWER STYLES --- */
+  .menu-drawer {
+    position: fixed;
+    top: 0;
+    right: -320px; /* Changed from right to left */
+    width: 300px;
+    height: 100vh;
+    background: white;
+    z-index: 101;
+    box-shadow: 5px 0 15px rgba(0,0,0,0.1); /* Shadow direction flipped */
+    transition: right 0.3s ease-in-out; /* Transition on left property */
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+  }
+
+  .menu-drawer.open {
+    right: 0; /* Changed from right to left */
+  }
+
+  .menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 1rem;
+  }
+
+  #menu-close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+
+  /* --- LIST STYLES --- */
+  .chapter-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .chapter-nav li {
+    margin-bottom: 0.5rem;
+  }
+
+  .chapter-nav a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.1rem;
+    display: block;
+    padding: 0.5rem;
+    border-radius: 4px;
+    transition: background 0.2s;
+  }
+
+  .chapter-nav a:hover {
+    background: #f0f0f0;
+  }
+
+  .chapter-nav a.active {
+    background: #e6fffa;
+    color: #008060;
+    font-weight: bold;
+  }
+
+  /* --- OVERLAY STYLES --- */
+  .menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 99;
+    opacity: 0;
+    pointer-events: none; /* Allows clicking through when hidden */
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .menu-overlay.open {
+    opacity: 1;
+    pointer-events: auto; /* Blocks clicks when visible */
+  }
+</style>

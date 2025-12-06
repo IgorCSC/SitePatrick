@@ -2,7 +2,7 @@
 title: 'Representação gráfica da evolução de acontecimentos no espaço-tempo'
 layout: '../layouts/CapituloLayout.astro'
 ---
-import NextChapter from '../components/NextChapter.astro';
+import ChapterNavigation from '../components/ChapterNavigation.astro';
 
 # Capitulo 1
 
@@ -205,4 +205,9 @@ Uma régua $AB$ é representada em ambos os gráficos. No gráfico da esquerda a
 
 Nos dois gráficos a régua encontra-se em $AB$ no instante $T$ = 0 e em $A_1B_1$ no instante $T$ = 9. A régua ocupa, sucessivamente, todos os pontos da área $ABB_1A_1$.
 
-<NextChapter url="/cap_0_intro/" title="Next" />
+<ChapterNavigation 
+  prevUrl="/cap_0_intro" 
+  prevTitle="Introdução"
+  nextUrl="/cap_2" 
+  nextTitle="Capítulo 2"
+/>

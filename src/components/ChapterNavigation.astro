@@ -1,0 +1,145 @@
+---
+interface Props {
+  prevUrl?: string;
+  prevTitle?: string;
+  nextUrl?: string;
+  nextTitle?: string;
+}
+
+const { prevUrl, prevTitle, nextUrl, nextTitle } = Astro.props;
+---
+
+<nav class="chapter-nav" aria-label="Chapter Navigation">
+  {prevUrl ? (
+    <a href={prevUrl} class="nav-link prev-chapter">
+      <div class="icon-container">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M19 12H5"></path>
+          <path d="M12 19l-7-7 7-7"></path>
+        </svg>
+      </div>
+      <div class="text-container">
+        <span class="label">Capítulo Anterior</span>
+        <span class="chapter-title">{prevTitle}</span>
+      </div>
+    </a>
+  ) : (
+    /* Empty div to maintain grid spacing if Next exists but Prev doesn't */
+    <div class="empty-placeholder"></div>
+  )}
+
+  {nextUrl ? (
+    <a href={nextUrl} class="nav-link next-chapter">
+      <div class="text-container">
+        <span class="label">Próximo Capítulo</span>
+        <span class="chapter-title">{nextTitle}</span>
+      </div>
+      <div class="icon-container">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12h14"></path>
+          <path d="M12 5l7 7-7 7"></path>
+        </svg>
+      </div>
+    </a>
+  ) : (
+    <div class="empty-placeholder"></div>
+  )}
+</nav>
+
+<style>
+  .chapter-nav {
+    margin-top: 4rem;
+    border-top: 1px solid #eaeaea;
+    padding-top: 2rem;
+    
+    /* Grid Layout for Split Screen */
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Equal split */
+    gap: 1.5rem;
+  }
+
+  .nav-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    background-color: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    color: inherit;
+  }
+
+  /* Specific Layouts */
+  .prev-chapter {
+    justify-content: flex-start; /* Icon on left */
+    text-align: left;
+  }
+  
+  .next-chapter {
+    justify-content: flex-end; /* Icon on right */
+    text-align: right;
+  }
+
+  /* Text Styling */
+  .text-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1; /* Allows text to fill space between icon and edge */
+  }
+
+  /* Add padding logic so text doesn't hit icons */
+  .prev-chapter .text-container { margin-left: 1rem; }
+  .next-chapter .text-container { margin-right: 1rem; }
+
+  .label {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #666;
+    font-weight: bold;
+  }
+
+  .chapter-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    font-family: 'Source Sans 3', sans-serif;
+    color: #333;
+  }
+
+  /* Icon Styling */
+  .icon-container {
+    color: #41b23b;
+    transition: transform 0.2s ease;
+    display: flex;
+    align-items: center;
+  }
+
+  /* Hover Effects */
+  .nav-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border-color: #41b23b;
+  }
+
+  .next-chapter:hover .icon-container {
+    transform: translateX(5px); /* Move right */
+  }
+
+  .prev-chapter:hover .icon-container {
+    transform: translateX(-5px); /* Move left */
+  }
+
+  /* Responsive Design: Stack on mobile */
+  @media (max-width: 768px) {
+    .chapter-nav {
+      grid-template-columns: 1fr; /* Single column */
+    }
+    
+    /* Optional: Hide the empty placeholder on mobile so gaps don't appear */
+    .empty-placeholder {
+      display: none;
+    }
+  }
+</style>
