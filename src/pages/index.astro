@@ -1,54 +1,150 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
 import { Image } from 'astro:assets';
 
-import funilImg from '../assets/imagens/lago_pq_2.jpg';
-
-import '../styles/global.css'
+import funilImg from '../assets/imagens/lago_vert_full_pq.jpg';
 ---
 
-<Layout>
-	<h1>Massa: um vertedouro acelerado do espaço no tempo</h1>
-	<h3>Patrick de Visscher</h3>
+<head><meta charset="UTF-8" /></head>
 
-	<Image 
-  src={funilImg} 
-  alt="Description" 
-  style="max-width: 100%; height: auto;" 
-  class="centered-img"
-/>
+<div class="split-container">
+  <div class="image-pane">
+    <Image
+        src={funilImg} alt="Beautiful landscape"
+        class="cover-image" />
+  </div>
 
-<p></p>
-
+  <div class="text-pane">
+    <h1>Massa: um vertedouro acelerado do espaço no tempo</h1>
+    <h2>Patrick de Vischer</h2>
+    <hr class="custom-line" />
+    <p>
 <nav class="chapter-list">
-    <a href="/cap_0_intro/">Introdução</a>
-    <a href="/cap_1_regex/">Capítulo 1</a>
+    <a href="/cap_0_intro/">
+      <span class="chapter-num"></span> Introdução
+    </a>
+    <a href="/cap_1_regex/">
+      <span class="chapter-num">1</span> Representação gráfica da evolução de acontecimentos no espaço-tempo
+    </a>
+    <a href="/cap_1_regex/">
+      <span class="chapter-num">2</span> Representação gráfica das transformações do espaço e do tempo na relatividade restrita
+    </a>
+        <a href="/cap_1_regex/">
+      <span class="chapter-num">3</span> Dimensões da massa e da carga elétrica
+    </a>
 </nav>
 
+</div>
+
 <style>
-  /* Center the text */
-  h1, h3 {
-    text-align: center;
-  }
 
-  /* Center the image */
-  .centered-img {
-    display: block;    /* 1. Make it a block element */
-    margin-left: auto; /* 2. Push from the left */
-    margin-right: auto;/* 3. Push from the right */
-    
-    /* Optional: constraint width just to look good */
-    max-width: 100%;   
-    height: auto;
-  }
-
-  .chapter-list {
+.chapter-list {
     display: flex;
-    flex-direction: column; /* Stacks them vertically */
-    align-items: center;    /* Centers them */
-    gap: 0.4rem;              /* Controls space between links (16px) */
+    flex-direction: column;
+    max-width: 400px;
+    font-family: system-ui, sans-serif; /* Or your preferred font */
+  }
+
+  .chapter-list a {
+    text-decoration: none;
+    color: #2c2c2c;       /* Dark grey, near black */
+    padding: 1rem 0;      /* Vertical breathing room */
+    border-bottom: 1px solid #eee; /* Very subtle separator */
+    font-size: 1.1rem;
+    transition: color 0.2s ease;
+    
+    /* Flex allows us to align the number and text nicely */
+    display: flex; 
+    align-items: center;
+    gap: 1rem;
+  }
+
+  /* Remove the border from the very last item for a cleaner look */
+  .chapter-list a:last-child {
+    border-bottom: none;
+  }
+
+  /* Optional: Style the numbers differently */
+  .chapter-num {
+    color: #999;
+    font-size: 0.9em;
+    font-weight: 300;
+    font-variant-numeric: tabular-nums; /* Keeps numbers aligned */
+  }
+
+  /* Hover Effect: Just changes text color */
+  .chapter-list a:hover {
+    color: #41b23b; /* Your green */
+  }
+  
+  /* When hovering the link, also color the number green */
+  .chapter-list a:hover .chapter-num {
+    color: #41b23b; 
+    opacity: 0.7;
+  }
+
+
+
+.custom-line {
+    border: 0;
+    height: 1px;
+    background: #333;
+    margin: 2rem 0;
+    margin-bottom: .8rem;
+  }
+
+h1 {
+  margin-bottom: .5rem; 
+  font-size: 2.2rem;
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: .5rem; 
+  font-size: 1.7rem;
+  text-align: center;
+}
+
+  /* 1. The Container */
+  .split-container {
+    display: grid;
+    /* This creates two columns of equal width */
+    grid-template-columns: 1fr 1.6fr;
+    /* Optional: Makes the container take up the full viewport height */
+    min-height: 100vh; 
+  }
+
+  /* 2. The Image Pane */
+  .image-pane {
+    /* Ensures the image covers the entire pane without distortion */
+    position: relative;
+  }
+  
+  .image-pane img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Key property to crop image nicely */
+    display: block;
+  }
+
+  /* 3. The Text Pane */
+  .text-pane {
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers text vertically */
+    background-color: #f4f4f4;
+  }
+
+  /* 4. Mobile Responsiveness */
+  @media (max-width: 768px) {
+    .split-container {
+      /* Switches to a single column on mobile */
+      grid-template-columns: 1fr;
+      min-height: auto; /* Adjust height logic for mobile */
+    }
+    
+    .image-pane {
+      height: 300px; /* Give image a fixed height on mobile */
+    }
   }
 </style>
-</Layout>
