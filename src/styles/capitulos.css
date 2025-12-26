@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
 
+/* --- GLOBAL SETTINGS --- */
 html {
   background-color: #ffffff;
   font-family: sans-serif;
@@ -22,88 +23,89 @@ html {
 
 body {
   text-align: justify;
-  margin: 12 auto;
-  margin-left: 8rem;
+  margin: 0 auto;
+  margin-left: 8rem; 
   width: 100%;
   max-width: 100ch;
   padding: 1rem;
   line-height: 1.7;
-  font-family: 'Source Sans 3';
-  font-size: 1.5rem
-}
-
-/* For # (h1) */
-.post-content h1 {
-  color: #41b23b;
-}
-
-/* For ## (h2) */
-.post-content h2 {
-  color: #2d71bb;
-  font-size: 2.2rem
-}
-
-/* For ### (h3) */
-.post-content h3 {
-  color: #f46717;
-  font-size: 2rem;
-}
-
-.post-content h2 {
-  /* Reduces space between the heading and the text BELOW it */
-  margin-bottom: 3.8rem; 
-  
-  /* OPTIONAL: Reduces space between the heading and the text ABOVE it */
-  margin-top: -1.5rem; 
-
-  /* Keeps multi-line titles from looking too spread out */
-  line-height: 1.1; 
-}
-
-.post-content h1 {
-  /* Reduces space between the heading and the text BELOW it */
-  margin-bottom: 3.8rem; 
-  
-  /* OPTIONAL: Reduces space between the heading and the text ABOVE it */
-  margin-top: 1.8rem; 
-
-  /* Keeps multi-line titles from looking too spread out */
-  line-height: 0.1; 
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 1.5rem;
 }
 
 * {
   box-sizing: border-box;
 }
 
-.post-content img {
-  display: block;       /* Makes the image behave like a block, not text */
-  margin-left: 0;       /* Forces alignment to the left */
-  margin-right: auto;   /* Pushes empty space to the right */
-  max-width: 60%;      /* Ensures it doesn't overflow mobile screens */
-  display: block; /* Removes bottom margin gap */
-  border-radius: 8px; /* Optional styling */
+/* --- HEADINGS --- */
+
+h1, .post-content h1 {
+  color: #41b23b; 
+  font-size: 2.5rem;
+  margin-top: 1.8rem;
+  margin-bottom: 3.8rem;
+  line-height: 1.1;
+  clear: both; 
 }
 
+.post-content h2 {
+  color: #2d71bb;
+  font-size: 2.2rem;
+  margin-top: -1.5rem;
+  margin-bottom: 3.8rem;
+  line-height: 1.1;
+  clear: both;
+}
+
+.post-content h3 {
+  clear: both;           
+  margin-top: 3rem;      
+  padding-top: 1rem;     
+  color: #f46717;
+  font-size: 2rem;
+  width: 100%;
+}
+
+/* --- IMAGE LAYOUT --- */
+
 .post-content img {
-  display: block;
-  margin-left: -2rem; /* 2. Push from the left */
-  margin-right: auto;/* 3. Push from the right */
-  max-width: 60%;
+  float: left;            
+  width: 50%;             
   height: auto;
-  display: block; /* Removes bottom margin gap */
-  border-radius: 8px; /* Optional styling */
+  
+  /* Margins */
+  margin-left: -2rem;     
+  margin-right: 2.5rem;   
+  margin-bottom: 2rem;    
+  
+  object-fit: scale-down; 
+  border-radius: 8px;     
 }
-z
-h1 {
-  color:rgb(189, 7, 116);
-  margin: 2rem 0;
-  font-size: 2.5rem;
+
+/* --- TEXT LAYOUT --- */
+
+/* Fix: Unwrap images from their P tags so the float works correctly */
+.post-content p:has(img) {
+  display: contents;
 }
+
+/* Force text blocks to respect the float and form a column */
+.post-content p,
+.post-content ul,
+.post-content ol,
+.post-content blockquote {
+  display: flow-root; 
+}
+
+/* --- UTILITIES --- */
 
 .center-img {
   display: block;
+  float: none !important; 
   margin-left: auto;
   margin-right: auto;
+  width: auto;
+  max-width: 100%;
 }
 
 .katex {

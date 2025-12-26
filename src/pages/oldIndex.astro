@@ -1,0 +1,54 @@
+---
+import Welcome from '../components/Welcome.astro';
+import Layout from '../layouts/Layout.astro';
+
+import { Image } from 'astro:assets';
+
+import funilImg from '../assets/imagens/lago_pq_2.jpg';
+
+import '../styles/global.css'
+---
+
+<Layout>
+	<h1>Massa: um vertedouro acelerado do espaço no tempo</h1>
+	<h3>Patrick de Visscher</h3>
+
+	<Image 
+  src={funilImg} 
+  alt="Description" 
+  style="max-width: 100%; height: auto;" 
+  class="centered-img"
+/>
+
+<p></p>
+
+<nav class="chapter-list">
+    <a href="/cap_0_intro/">Introdução</a>
+    <a href="/cap_1_regex/">Capítulo 1</a>
+</nav>
+
+<style>
+  /* Center the text */
+  h1, h3 {
+    text-align: center;
+  }
+
+  /* Center the image */
+  .centered-img {
+    display: block;    /* 1. Make it a block element */
+    margin-left: auto; /* 2. Push from the left */
+    margin-right: auto;/* 3. Push from the right */
+    
+    /* Optional: constraint width just to look good */
+    max-width: 100%;   
+    height: auto;
+  }
+
+  .chapter-list {
+    display: flex;
+    flex-direction: column; /* Stacks them vertically */
+    align-items: center;    /* Centers them */
+    gap: 0.4rem;              /* Controls space between links (16px) */
+  }
+</style>
+</Layout>
