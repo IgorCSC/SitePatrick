@@ -6,6 +6,7 @@ import funilImg from '../assets/imagens/lago_vert_full_pq.jpg';
 
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap" />
@@ -159,9 +160,25 @@ h2 {
       grid-template-columns: 1fr;
       min-height: auto; /* Adjust height logic for mobile */
     }
-    
+
     .image-pane {
-      height: 300px; /* Give image a fixed height on mobile */
+      height: 40vh; /* Scales with the screen instead of a fixed height */
+    }
+
+    .text-pane {
+      padding: 1.5rem;
+    }
+
+    h1 {
+      font-size: 1.6rem;
+    }
+
+    h2 {
+      font-size: 1.25rem;
+    }
+
+    .chapter-list a {
+      font-size: 1rem; /* Slightly smaller, padding keeps links tap-friendly */
     }
   }
 </style>

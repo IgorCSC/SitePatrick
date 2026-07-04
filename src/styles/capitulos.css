@@ -96,13 +96,34 @@ h1, .post-content h1 {
   body {
     margin-left: 0;
     padding: 1rem;
+    font-size: 1.1rem;
+    text-align: left; /* Justified text creates ugly gaps in narrow columns */
   }
 
+  h1, .post-content h1 {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
+
+  .post-content h2 {
+    font-size: 1.5rem;
+    margin-top: 0; /* Undo the desktop negative margin so it doesn't clip */
+    margin-bottom: 2rem;
+  }
+
+  .post-content h3 {
+    font-size: 1.4rem;
+    margin-top: 2rem;
+    padding-top: 0.5rem;
+  }
+
+  /* Stack graphs: title, then full-width image, then explanation */
   .post-content img {
     float: none;
     width: 100%;
     margin-left: 0;
     margin-right: 0;
+    margin-bottom: 1.25rem;
   }
 }
 
