@@ -4,7 +4,12 @@ import { Image } from 'astro:assets';
 import funilImg from '../assets/imagens/lago_vert_full_pq.jpg';
 ---
 
-<head><meta charset="UTF-8" /></head>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap" />
+</head>
 
 <div class="split-container">
   <div class="image-pane">
@@ -17,7 +22,6 @@ import funilImg from '../assets/imagens/lago_vert_full_pq.jpg';
     <h1>Massa: um vertedouro acelerado do espaço no tempo</h1>
     <h2>Patrick de Vischer</h2>
     <hr class="custom-line" />
-    <p>
 <nav class="chapter-list">
     <a href="/cap_0">
       <span class="chapter-num"></span> Introdução
@@ -41,65 +45,73 @@ import funilImg from '../assets/imagens/lago_vert_full_pq.jpg';
     display: flex;
     flex-direction: column;
     max-width: 400px;
-    font-family: system-ui, sans-serif; /* Or your preferred font */
+    font-family: 'Source Sans 3', sans-serif;
   }
 
   .chapter-list a {
     text-decoration: none;
-    color: #2c2c2c;       /* Dark grey, near black */
-    padding: 1rem 0;      /* Vertical breathing room */
-    border-bottom: 1px solid #eee; /* Very subtle separator */
+    color: #0d0950;       /* Navy */
+    padding: 0.7rem 0;    /* Rhythm carries the separation, no lines needed */
     font-size: 1.1rem;
-    transition: color 0.2s ease;
-    
+    transition: color 0.2s ease, transform 0.25s ease;
+
     /* Flex allows us to align the number and text nicely */
-    display: flex; 
+    display: flex;
     align-items: center;
     gap: 1rem;
   }
 
-  /* Remove the border from the very last item for a cleaner look */
-  .chapter-list a:last-child {
-    border-bottom: none;
-  }
-
   /* Optional: Style the numbers differently */
   .chapter-num {
-    color: #999;
-    font-size: 0.9em;
-    font-weight: 300;
+    font-family: 'Newsreader', serif; /* Serif italic numeral as editorial accent */
+    font-style: italic;
+    color: #c0b6a4;
+    font-size: 1.3em;
+    font-weight: 400;
+    line-height: 1;
     font-variant-numeric: tabular-nums; /* Keeps numbers aligned */
+    width: 1.2rem;
+    text-align: right;
+    flex-shrink: 0; /* All titles start at the same x-position */
+    transition: color 0.2s ease;
   }
 
-  /* Hover Effect: Just changes text color */
+  /* Hover Effect: gentle slide + coral accent */
   .chapter-list a:hover {
-    color: #41b23b; /* Your green */
+    color: #ff9776; /* Coral accent */
+    transform: translateX(6px);
   }
-  
-  /* When hovering the link, also color the number green */
+
+  /* When hovering the link, the numeral warms up too */
   .chapter-list a:hover .chapter-num {
-    color: #41b23b; 
-    opacity: 0.7;
+    color: #ff9776;
   }
 
 .custom-line {
     border: 0;
-    height: 1px;
-    background: #333;
-    margin: 2rem 0;
+    height: 2px;
+    width: 3rem;
+    background: #ff9776; /* Short coral editorial rule */
+    margin: 2rem auto;
     margin-bottom: .8rem;
   }
 
 h1 {
-  color: #41b23b; /* Your green */
-  margin-bottom: .5rem; 
+  font-family: 'Newsreader', serif;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  color: #0d0950; /* Navy */
+  margin-bottom: .5rem;
   font-size: 2.2rem;
   text-align: center;
 }
 
 h2 {
-  color: #2d71bb;
-  margin-bottom: .5rem; 
+  font-family: 'Newsreader', serif;
+  font-weight: 400;
+  font-style: italic;
+  color: #6f675b; /* Warm muted grey byline */
+  margin-bottom: .5rem;
   font-size: 1.7rem;
   text-align: center;
 }
@@ -124,7 +136,7 @@ h2 {
     height: 100%;
     object-fit: contain; /* Key property to crop image nicely */
     display: block;
-    background-color: #F5F5F5;
+    background-color: #FBF9F4;
   }
 
   /* 3. The Text Pane */
@@ -137,7 +149,7 @@ h2 {
     display: flex;
     flex-direction: column;
     justify-content: center; /* Centers text vertically */
-    background-color: #F5F5F5;
+    background-color: #FBF9F4;
   }
 
   /* 4. Mobile Responsiveness */

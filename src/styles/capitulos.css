@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap');
 
 /* --- GLOBAL SETTINGS --- */
 html {
-  background-color: #ffffff;
+  background-color: #FBF9F4;
   font-family: sans-serif;
 }
 
@@ -40,16 +41,22 @@ body {
 /* --- HEADINGS --- */
 
 h1, .post-content h1 {
-  color: #41b23b; 
+  font-family: 'Newsreader', serif;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  color: #0d0950;
   font-size: 2.5rem;
   margin-top: 1.8rem;
   margin-bottom: 3.8rem;
   line-height: 1.1;
-  clear: both; 
+  clear: both;
 }
 
 .post-content h2 {
-  color: #2d71bb;
+  font-family: 'Newsreader', serif;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: #0d0950;
   font-size: 2.2rem;
   margin-top: -1.5rem;
   margin-bottom: 3.8rem;
@@ -58,10 +65,13 @@ h1, .post-content h1 {
 }
 
 .post-content h3 {
-  clear: both;           
-  margin-top: 3rem;      
-  padding-top: 1rem;     
-  color: #f46717;
+  font-family: 'Newsreader', serif;
+  font-weight: 500;
+  font-style: italic;
+  clear: both;
+  margin-top: 3rem;
+  padding-top: 1rem;
+  color: #e0623d;
   font-size: 2rem;
   width: 100%;
 }
