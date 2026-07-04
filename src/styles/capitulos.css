@@ -79,17 +79,31 @@ h1, .post-content h1 {
 /* --- IMAGE LAYOUT --- */
 
 .post-content img {
-  float: left;            
-  width: 50%;             
+  float: left;
+  width: 50%;
   height: auto;
-  
+
   /* Margins */
-  margin-left: -2rem;     
-  margin-right: 2.5rem;   
-  margin-bottom: 2rem;    
-  
-  object-fit: scale-down; 
-  border-radius: 8px;     
+  margin-left: -2rem;
+  margin-right: 2.5rem;
+  margin-bottom: 2rem;
+
+  object-fit: scale-down;
+  border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+  body {
+    margin-left: 0;
+    padding: 1rem;
+  }
+
+  .post-content img {
+    float: none;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 
 /* --- TEXT LAYOUT --- */
