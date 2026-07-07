@@ -71,9 +71,15 @@ h1, .post-content h1 {
   clear: both;
   margin-top: 3rem;
   padding-top: 1rem;
-  color: #e0623d;
+  color: #0d0950; /* Coral accent — matches landing page */
   font-size: 2rem;
   width: 100%;
+}
+
+/* Graph/drawing title within an h3 (the text after "Gráfico N •").
+   Navy title + coral prefix — matches the landing page navy-coral scheme. */
+.post-content h3 span {
+  color: #ff9776;
 }
 
 /* --- IMAGE LAYOUT --- */
