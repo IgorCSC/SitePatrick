@@ -24,9 +24,9 @@ pnpm-debug.log*
 .idea/
 
 CHANGELOG.md
-src/pages/cap_0_antigo.mdx
-src/pages/cap_1_1_old.mdx
-src/pages/cap_1_old.mdx
-src/pages/versao_jul_2026_word.txt
+src/pages/_cap_0_antigo.mdx
+src/pages/_cap_1_1_old.mdx
+src/pages/_cap_1_old.mdx
+src/pages/_versao_jul_2026_word.txt
 textChange/
 AnotaçõesIgor.txt
