@@ -21,7 +21,10 @@ import funilImg from '../assets/imagens/Flammarion1.jpg';
 
   <div class="text-pane">
     <h1>Espaço, uma ilusão do tempo?</h1>
-    <h2>Patrick de Vischer</h2>
+    <h2>Patrick de Visscher</h2>
+    <p class="contact">
+      Contato · <a href="mailto:patrickdevisscher@gmail.com">patrickdevisscher@gmail.com</a>
+    </p>
     <hr class="custom-line" />
 <nav class="chapter-list">
     <a href="/cap_0">
@@ -95,6 +98,27 @@ import funilImg from '../assets/imagens/Flammarion1.jpg';
     background: #ff9776; /* Short coral editorial rule */
     margin: 2rem auto;
     margin-bottom: .8rem;
+  }
+
+  .contact {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.9rem;
+    color: #6f675b; /* Same warm grey as the byline */
+    text-align: center;
+    margin: 0;
+  }
+
+  .contact a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px solid #c0b6a4;
+    padding-bottom: 1px;
+    transition: color 0.2s ease, border-color 0.2s ease;
+  }
+
+  .contact a:hover {
+    color: #ff9776;
+    border-color: #ff9776;
   }
 
 h1 {
